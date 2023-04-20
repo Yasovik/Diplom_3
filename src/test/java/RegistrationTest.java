@@ -1,4 +1,5 @@
 import TestData.Data;
+import TestData.DataSerialization;
 import api.DeleteUser;
 import api.LoginUser;
 import io.qameta.allure.junit4.DisplayName;
@@ -28,7 +29,7 @@ public class RegistrationTest extends Data {
     @DisplayName("Регистрация нового пользователя")
     public void registrationTest() {
         RegistrationPage objRegistration = new RegistrationPage(driver);
-        SerializationData data = new SerializationData(email, password);
+        DataSerialization data = new DataSerialization(email,password,null);
         objRegistration.inputName();
         objRegistration.inputEmail();
         objRegistration.inputPassword(password);

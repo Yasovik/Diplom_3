@@ -13,7 +13,7 @@ public class LoginPage extends Data {
     //кнопка восстановить пароль
     private final By restorePasswordButton = By.xpath(".//a[text()='Восстановить пароль']");
     //кнопка войти
-    public final By signInButton = By.xpath(".//button[text()='Войти']");
+    private final By signInButton = By.xpath(".//button[text()='Войти']");
     //поле ввода почты в окне входа
     private final By emailField = By.xpath(".//label[text()='Email']/following-sibling::input");
     //поле ввода пароля в окне входа

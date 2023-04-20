@@ -1,3 +1,4 @@
+import TestData.Data;
 import api.CreateUser;
 import api.DeleteUser;
 import io.qameta.allure.junit4.DisplayName;
@@ -12,12 +13,10 @@ import pageObjectModel.LoginPage;
 import pageObjectModel.MainPage;
 import pageObjectModel.ProfilePage;
 import pageObjectModel.RegistrationPage;
-
-import static TestData.Data.userCreateData;
 import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.Matchers.startsWith;
 
-public class LoginUserTest {
+public class LoginUserTest extends Data {
     private static String accessToken;
     CreateUser createUser = new CreateUser();
     private WebDriver driver;
@@ -167,13 +166,13 @@ public class LoginUserTest {
         objLogin.inputPassword();
         objLogin.clickSignInButton();
         objPage.clickSaucesButton();
-        String actualResultSauce = driver.findElement(objPage.sauceSection).getAttribute("class");
+        String actualResultSauce = objPage.getResultSauce();
         MatcherAssert.assertThat(actualResultSauce, containsString("current"));
         objPage.clickBunsButton();
-        String actualResultBuns = driver.findElement(objPage.bunsSection).getAttribute("class");
+        String actualResultBuns = objPage.getResultBuns();
         MatcherAssert.assertThat(actualResultBuns, containsString("current"));
         objPage.clickFillingsButton();
-        String actualResultFillings = driver.findElement(objPage.fillingSection).getAttribute("class");
+        String actualResultFillings = objPage.getResultFillings();
         MatcherAssert.assertThat(actualResultFillings, containsString("current"));
 
     }

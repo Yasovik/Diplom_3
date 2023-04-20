@@ -7,7 +7,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ProfilePage {
     // Кнопка выйти
-    public final By logoutButton = By.xpath(".//button[text() = 'Выход']");
+    private final By logoutButton = By.xpath(".//button[text() = 'Выход']");
     //кнопка конструктора
     private final By constructorButton = By.xpath(".//p[text()='Конструктор']");
     // Кнопка логотип

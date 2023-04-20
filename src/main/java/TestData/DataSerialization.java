@@ -1,10 +1,14 @@
-public class SerializationData {
+package TestData;
+
+public class DataSerialization {
     String email;
     String password;
+    String name;
 
-    public SerializationData(String email, String password) {
+    public DataSerialization(String email, String password, String name) {
         this.email = email;
         this.password = password;
+        this.name = name;
     }
 
     public String getEmail() {
@@ -22,4 +26,13 @@ public class SerializationData {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }
+

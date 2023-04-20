@@ -7,13 +7,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class MainPage {
     //кнопка оформить заказ
-    public final By makeOrderButton = By.xpath(".//button[(text()='Оформить заказ')]");
+    private final By makeOrderButton = By.xpath(".//button[(text()='Оформить заказ')]");
     //Секция булки
-    public final By bunsSection = By.xpath(".//div[@style]/div[1]");
+    private final By bunsSection = By.xpath(".//div[@style]/div[1]");
     // Секция соусы
-    public final By sauceSection = By.xpath(".//div[@style]/div[2]");
+    private final By sauceSection = By.xpath(".//div[@style]/div[2]");
     // Секция Начинки
-    public final By fillingSection = By.xpath(".//div[@style]/div[3]");
+    private final By fillingSection = By.xpath(".//div[@style]/div[3]");
     // Личный кабинет
     private final By personalAccountButton = By.xpath(".//p[text()='Личный Кабинет']");
     //кнопка войти в аккаунт
@@ -28,6 +28,25 @@ public class MainPage {
 
     public MainPage(WebDriver driver) {
         this.driver = driver;
+    }
+
+    @Step("Получить атрибут булок")
+
+    public String getResultBuns() {
+        return driver.findElement(bunsSection).getAttribute("class");
+
+    }
+
+    @Step("Получить атрибут соусов")
+    public String getResultSauce() {
+        return driver.findElement(sauceSection).getAttribute("class");
+
+    }
+
+    @Step("Получить атрибут Начинок")
+    public String getResultFillings() {
+        return driver.findElement(fillingSection).getAttribute("class");
+
     }
 
     @Step("Клик по кнопке войти")
